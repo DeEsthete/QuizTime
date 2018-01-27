@@ -1,0 +1,23 @@
+﻿<Window x:Class="TranslateApplication.GamesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TranslateApplication"
+        mc:Ignorable="d"
+        Title="GamesWindow" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Content="Викторина" Grid.Row="0" Click="QuizButtonClick"/>
+        <Button Content="Викторина на скорость" Grid.Row="1"/>
+        <Button Content="Тренажер скорости" Grid.Row="2" Click="SpeedTrainingButtonClick"/>
+        <Button Content="Пропущенная буква" Grid.Row="3" Click="LosenLetterGameWindowOpenButtonClick"/>
+        <Button Content="Выйти" Grid.Row="4" Click="CloseWindowButtonClick"/>
+    </Grid>
+</Window>

@@ -15,7 +15,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Button Content="Викторина" Grid.Row="0" Click="QuizButtonClick"/>
-        <Button Content="Викторина на скорость" Grid.Row="1"/>
+        <Button Content="Викторина на скорость" Grid.Row="1" Click="SpeedQuizButtonClick"/>
         <Button Content="Тренажер скорости" Grid.Row="2" Click="SpeedTrainingButtonClick"/>
         <Button Content="Пропущенная буква" Grid.Row="3" Click="LosenLetterGameWindowOpenButtonClick"/>
         <Button Content="Выйти" Grid.Row="4" Click="CloseWindowButtonClick"/>

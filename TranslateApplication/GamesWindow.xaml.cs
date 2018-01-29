@@ -43,5 +43,10 @@ namespace TranslateApplication
         {
             new Games.GameWindow(Games.Games.SpeedTraining).Show();
         }
+
+        private void SpeedQuizButtonClick(object sender, RoutedEventArgs e)
+        {
+            new Games.GameWindow(Games.Games.SpeedQuiz).Show();
+        }
     }
 }

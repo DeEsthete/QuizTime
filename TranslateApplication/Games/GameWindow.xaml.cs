@@ -27,6 +27,7 @@ namespace TranslateApplication.Games
                 case Games.LosedLetter: Content = new LosenLetterGame(this); break;
                 case Games.Quiz:Content = new Quiz(this);break;
                 case Games.SpeedTraining: Content = new SpeedTraining(this);break;
+                case Games.SpeedQuiz: Content = new QuizTime(this); break;
             }
         }
     }

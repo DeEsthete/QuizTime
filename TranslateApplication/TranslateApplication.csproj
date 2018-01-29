@@ -73,6 +73,9 @@
     <Compile Include="Games\Quiz.xaml.cs">
       <DependentUpon>Quiz.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Games\QuizTime.xaml.cs">
+      <DependentUpon>QuizTime.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Games\SpeedTraining.xaml.cs">
       <DependentUpon>SpeedTraining.xaml</DependentUpon>
     </Compile>
@@ -102,6 +105,10 @@
     <Page Include="Games\Quiz.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Games\QuizTime.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Games\SpeedTraining.xaml">
       <SubType>Designer</SubType>

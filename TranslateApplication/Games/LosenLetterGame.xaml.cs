@@ -26,7 +26,7 @@ namespace TranslateApplication.Games
         private DispatcherTimer timer;
         private DispatcherTimer delayTimer;
         private int seconds;
-        private const int ALL_SECONDS = 10;
+        private const int ALL_SECONDS = 180;
 
         private List<string> words;
         private string wordWithLosenLetter;
@@ -50,20 +50,30 @@ namespace TranslateApplication.Games
         {
             InitializeComponent();
             this.window = window;
+            window.Closed += (send, args) =>
+            {
+                if (timer!=null){
+                    if (timer.IsEnabled) timer.Stop();
+                    if (delayTimer.IsEnabled) delayTimer.Stop();
+                }
+            };
             seconds = 0;
 
             correctAnswers = 0;
             words = new List<string>(Configs.GetAllWordsFrom(TranslatorFiles.BaseDirectory));
 
-            timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 1);
+            timer = new DispatcherTimer()
+            {
+                Interval = new TimeSpan(0, 0, 1)
+            };
             timer.Tick += Tick;
-            delayTimer = new DispatcherTimer();
-            delayTimer.Interval = new TimeSpan(0, 0, 5);
+            delayTimer = new DispatcherTimer()
+            {
+                Interval = new TimeSpan(0, 0, 5)
+            };
             delayTimer.Tick += Delay;
 
             timer.Start();
-
             ChangeWords();
         }
 
@@ -138,70 +148,79 @@ namespace TranslateApplication.Games
 
         private void FirstLetterClick(object sender, RoutedEventArgs e)
         {
-            if(rightButton == 1)
+            if (timer.IsEnabled)
             {
-                correctAnswers++;
-                firstLetter.Background = Brushes.Green;
-                delayTimer.Start();
-                timer.Stop();
-            }
-            else
-            {
-                firstLetter.Background = Brushes.Red;
-                delayTimer.Start();
-                timer.Stop();
+                if (rightButton == 1)
+                {
+                    correctAnswers++;
+                    firstLetter.Background = Brushes.Green;
+                    delayTimer.Start();
+                    timer.Stop();
+                }
+                else
+                {
+                    firstLetter.Background = Brushes.Red;
+                    delayTimer.Start();
+                    timer.Stop();
+                }
             }
         }
-
         private void SecondLetterClick(object sender, RoutedEventArgs e)
         {
-            if (rightButton == 2)
+            if (timer.IsEnabled)
             {
-                correctAnswers++;
-                secondLetter.Background = Brushes.Green;
-                delayTimer.Start();
-                timer.Stop();
-            }
-            else
-            {
-                secondLetter.Background = Brushes.Red;
-                delayTimer.Start();
-                timer.Stop();
+                if (rightButton == 2)
+                {
+                    correctAnswers++;
+                    secondLetter.Background = Brushes.Green;
+                    delayTimer.Start();
+                    timer.Stop();
+                }
+                else
+                {
+                    secondLetter.Background = Brushes.Red;
+                    delayTimer.Start();
+                    timer.Stop();
+                }
             }
         }
-
         private void ThirdLetterClick(object sender, RoutedEventArgs e)
         {
-            if (rightButton == 3)
+            if (timer.IsEnabled)
             {
-                correctAnswers++;
-                thirdLetter.Background = Brushes.Green;
-                delayTimer.Start();
-                timer.Stop();
-            }
-            else
-            {
-                thirdLetter.Background = Brushes.Red;
-                delayTimer.Start();
-                timer.Stop();
+                if (rightButton == 3)
+                {
+                    correctAnswers++;
+                    thirdLetter.Background = Brushes.Green;
+                    delayTimer.Start();
+                    timer.Stop();
+                }
+                else
+                {
+                    thirdLetter.Background = Brushes.Red;
+                    delayTimer.Start();
+                    timer.Stop();
+                }
             }
         }
-
         private void FourthLetterClick(object sender, RoutedEventArgs e)
         {
-            if (rightButton == 4)
+            if (timer.IsEnabled)
             {
-                correctAnswers++;
-                fourthLetter.Background = Brushes.Green;
-                delayTimer.Start();
-                timer.Stop();
-            }
-            else
-            {
-                fourthLetter.Background = Brushes.Red;
-                delayTimer.Start();
-                timer.Stop();
-            }
+                if (rightButton == 4)
+                {
+                    correctAnswers++;
+                    fourthLetter.Background = Brushes.Green;
+                    delayTimer.Start();
+                    timer.Stop();
+                }
+                else
+                {
+                    fourthLetter.Background = Brushes.Red;
+                    delayTimer.Start();
+                    timer.Stop();
+                }
+            }   
         }
     }
 }

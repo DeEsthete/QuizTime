@@ -34,6 +34,16 @@ namespace TranslateApplication.Games
         {
             InitializeComponent();
             this.window = window;
+            window.Closed += (send, args) =>
+            {
+                if (timer != null)
+                {
+                    if (timer.IsEnabled)
+                    {
+                        timer.Stop();
+                    }
+                }
+            };
         }
         private void StartGameButtonClick(object sender, RoutedEventArgs e)
         {
@@ -56,7 +66,7 @@ namespace TranslateApplication.Games
                 if (seconds >= TIME)
                 {
                     timer.Stop();
-                    MessageBox.Show(string.Format("Ваша скорость {0} букв в секундну", (double)seconds / lettersCount));
+                    MessageBox.Show(string.Format("Ваша скорость {0} букв в секундну",Math.Round((double)lettersCount/ seconds, 2)));
                     window.Close();
                 }
             };
@@ -87,6 +97,8 @@ namespace TranslateApplication.Games
                     {
                         letters = letters.Remove(0, 1);
                         text.Text = letters;
+                        lettersCount++;
+                        if (letters.Length == 0) GenerateLetters();
                     }
                 }
             }

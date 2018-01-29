@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\ПавловЕ\Desktop\TranslateApplication\Autorun\obj\Debug\
+C:\Users\ПавловЕ\Desktop\TranslateApplication\Autorun\obj\Release\
 Autorun
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\ПавловЕ\Desktop\TranslateApplication\Autorun\App.xaml
 2-1838575358
 
